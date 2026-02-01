@@ -202,6 +202,7 @@ export class MonteCarloEngine {
     let totalInvested = 0;
     const monthlyToStock = monthlyAmount * allocation;
     const monthlyToMortgage = monthlyAmount * (1 - allocation);
+    const monthlyRate = mortgageRate / 12;
 
     const yearlyValues = new Array(years + 1);
     yearlyValues[0] = 0;
@@ -211,7 +212,18 @@ export class MonteCarloEngine {
       stockValue += annualContribution;
       totalInvested += annualContribution;
       stockValue *= (1 + returns[year]);
-      yearlyValues[year + 1] = stockValue;
+
+      // Add mortgage savings from non-stock portion at this year
+      const totalMonths = (year + 1) * 12;
+      let mortgageSavingsAtYear;
+      if (monthlyRate === 0) {
+        mortgageSavingsAtYear = monthlyToMortgage * totalMonths;
+      } else {
+        mortgageSavingsAtYear = monthlyToMortgage *
+          ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate);
+      }
+
+      yearlyValues[year + 1] = stockValue + mortgageSavingsAtYear;
     }
 
     const capitalGains = Math.max(0, stockValue - totalInvested);
