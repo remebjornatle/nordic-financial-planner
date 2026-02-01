@@ -1,0 +1,145 @@
+.time-chart-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.time-chart-container:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.time-chart-title {
+  text-align: center;
+  margin: 0 0 0.75rem 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.time-chart-tooltip {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-chart-tooltip .tooltip-title {
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #333;
+  font-size: 0.85rem;
+}
+
+.time-chart-tooltip .tooltip-row {
+  margin: 2px 0;
+  color: #4A90E2;
+}
+
+.time-chart-tooltip .tooltip-row.median {
+  font-weight: 600;
+}
+
+.time-chart-tooltip .tooltip-row.p5,
+.time-chart-tooltip .tooltip-row.p95 {
+  color: #888;
+}
+
+.time-chart-tooltip .tooltip-row.mortgage {
+  color: #50C878;
+  font-weight: 500;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #eee;
+}
+
+.time-chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-line {
+  width: 20px;
+  height: 2.5px;
+  display: inline-block;
+  border-radius: 1px;
+}
+
+.legend-line.dashed {
+  background: repeating-linear-gradient(
+    to right,
+    #50C878 0,
+    #50C878 6px,
+    transparent 6px,
+    transparent 10px
+  );
+  height: 2.5px;
+}
+
+.legend-band {
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.legend-band.inner {
+  background: rgba(74, 144, 226, 0.3);
+}
+
+.legend-band.outer {
+  background: rgba(74, 144, 226, 0.12);
+}
+
+@media (max-width: 768px) {
+  .time-chart-container {
+    padding: 1rem;
+  }
+
+  .time-chart-title {
+    font-size: 1rem;
+  }
+
+  .time-chart-legend {
+    gap: 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .legend-line {
+    width: 14px;
+  }
+
+  .legend-band {
+    width: 12px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .time-chart-container {
+    padding: 0.75rem;
+  }
+
+  .time-chart-title {
+    font-size: 0.9rem;
+  }
+
+  .time-chart-legend {
+    gap: 0.4rem;
+    font-size: 0.65rem;
+  }
+}

@@ -1,0 +1,45 @@
+.histogram-pair-container {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.histogram-single {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.histogram-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.histogram-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .histogram-pair-container {
+    margin: 1.5rem 0;
+  }
+
+  .histogram-card {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .histogram-pair-container {
+    margin: 1rem 0;
+  }
+
+  .histogram-card {
+    padding: 0.5rem;
+  }
+}

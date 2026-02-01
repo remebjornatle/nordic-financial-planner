@@ -1,0 +1,209 @@
+.comparison-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.comparison-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.probability-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.probability-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.probability-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-top: 0.35rem;
+}
+
+.comparison-grid {
+  padding: 0.5rem 2rem 1.5rem;
+}
+
+.grid-header,
+.grid-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  align-items: center;
+}
+
+.grid-header {
+  border-bottom: 2px solid #e9ecef;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.grid-row {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+
+.grid-row:last-child {
+  border-bottom: none;
+}
+
+.grid-row:hover {
+  background: #f8f9fa;
+}
+
+.grid-row-highlight {
+  background: #f0f7ff;
+}
+
+.grid-row-highlight:hover {
+  background: #e3effc;
+}
+
+.stock-header {
+  color: #4A90E2;
+}
+
+.mortgage-header {
+  color: #50C878;
+}
+
+.label-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-label {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.row-sublabel {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.stock-cell {
+  color: #4A90E2;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.mortgage-cell {
+  color: #50C878;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.diff-cell {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.comparison-disclaimer {
+  margin: 0 2rem 1.5rem;
+  padding: 0.75rem 1rem;
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #856404;
+  line-height: 1.5;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .comparison-header {
+    padding: 1.25rem 1rem;
+  }
+
+  .probability-value {
+    font-size: 2rem;
+  }
+
+  .probability-label {
+    font-size: 0.85rem;
+  }
+
+  .comparison-grid {
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .grid-header,
+  .grid-row {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    font-size: 0.8rem;
+    gap: 0.25rem;
+    padding: 0.6rem 0;
+  }
+
+  .row-label {
+    font-size: 0.8rem;
+  }
+
+  .row-sublabel {
+    font-size: 0.65rem;
+  }
+
+  .stock-cell,
+  .mortgage-cell,
+  .diff-cell {
+    font-size: 0.8rem;
+  }
+
+  .comparison-disclaimer {
+    margin: 0 1rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-header {
+    padding: 1rem 0.75rem;
+  }
+
+  .probability-value {
+    font-size: 1.75rem;
+  }
+
+  .probability-label {
+    font-size: 0.75rem;
+  }
+
+  .comparison-grid {
+    padding: 0.25rem 0.5rem 0.75rem;
+    overflow-x: auto;
+  }
+
+  .grid-header,
+  .grid-row {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    min-width: 340px;
+    font-size: 0.7rem;
+    gap: 0.15rem;
+    padding: 0.5rem 0;
+  }
+
+  .grid-header {
+    font-size: 0.7rem;
+  }
+
+  .comparison-disclaimer {
+    margin: 0 0.5rem 0.75rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
